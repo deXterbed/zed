@@ -33,7 +33,7 @@ macro_rules! relative_size {
         ///
         /// ```rust
         /// let max_height: RelativeHeight = (RelativeHeight::FULL - Rems(5.0)) * 0.95;
-        /// some_div.h(max_height.as_pixels(window);
+        /// some_div.h(max_height.as_pixels(window));
         /// ```
         #[derive(Debug, Clone, Copy, PartialEq)]
         pub struct $name {
@@ -176,7 +176,7 @@ impl ViewportFraction {
     }
 
     /// Returns the fraction of the viewport that this describes.
-    /// Guarenteed to be between zero and one
+    /// Guaranteed to be between zero and one
     pub(crate) fn raw(&self) -> f32 {
         self.0
     }
@@ -192,7 +192,7 @@ impl std::ops::Mul<f32> for ViewportFraction {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 pub(crate) enum VerticalPadding {
-    /// The picker always fills its height even if there are no resutls
+    /// The picker always fills its height even if there are no results
     #[default]
     Pad,
     /// Picker might be shorter then it's height if there is not enough to display
